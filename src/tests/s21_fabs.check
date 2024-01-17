@@ -1,0 +1,16 @@
+#include <check.h>
+#include <math.h>
+
+#include "s21_math.h"
+
+#test fabs_test
+ck_assert_ldouble_eq(s21_abs(-25), abs(-25));
+ck_assert_ldouble_eq(s21_abs(25), abs(25));
+ck_assert_ldouble_eq(s21_abs(-1222.111), abs(-1222.111));
+ck_assert_ldouble_eq(s21_abs(1222.111), abs(1222.111));
+ck_assert_ldouble_eq(s21_abs(0), abs(0));
+ck_assert_ldouble_eq(s21_abs(-0.000222), abs(0.000222));
+
+ck_assert_ldouble_nan(s21_fabs(NAN));
+ck_assert_double_infinite(s21_fabs(INFINITY));
+ck_assert_double_infinite(s21_fabs(-INFINITY));

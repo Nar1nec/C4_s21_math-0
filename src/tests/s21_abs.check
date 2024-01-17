@@ -1,0 +1,13 @@
+#include <check.h>
+#include <math.h>
+#include <stdlib.h>
+
+#include "s21_math.h"
+
+#test abs_test
+ck_assert_uint_eq(s21_abs(-25), abs(-25));
+ck_assert_uint_eq(s21_abs(25), abs(25));
+ck_assert_uint_eq(s21_abs(-1222), abs(-1222));
+ck_assert_uint_eq(s21_abs(1222), abs(1222));
+ck_assert_uint_eq(s21_abs(0), abs(0));
+

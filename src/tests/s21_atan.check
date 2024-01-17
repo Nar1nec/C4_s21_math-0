@@ -1,0 +1,23 @@
+#include <check.h>
+#include <math.h>
+
+#include "s21_math.h"
+
+#test s21_atan_test
+
+ck_assert_ldouble_eq_tol(s21_atan(0), atan(0), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(-1), atan(-1), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(1), atan(1), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(1), atan(1), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(0.6), atan(0.6), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(-1.5), atan(-1.5), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(0.333333), atan(0.333333), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(-0.666666), atan(-0.666666), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(0.00123), atan(0.00123), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(32492), atan(32492), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(-28663), atan(-28663), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(12220.901283290), atan(12220.901283290),
+                         1e-6);
+ck_assert_ldouble_nan(s21_atan(NAN));
+ck_assert_ldouble_eq_tol(s21_atan(INFINITY), atan(INFINITY), 1e-6);
+ck_assert_ldouble_eq_tol(s21_atan(-INFINITY), atan(-INFINITY), 1e-6);

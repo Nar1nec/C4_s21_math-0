@@ -1,0 +1,12 @@
+#include <check.h>
+#include <math.h>
+
+#include "s21_math.h"
+
+#test s21_tan_test
+for (double i = -50; i <= 50; i += 0.1) {
+  ck_assert_double_eq_tol(tanl(i), s21_tan(i), s21_EPS);
+}
+ck_assert_ldouble_nan(s21_tan(NAN));
+ck_assert_double_nan(s21_tan(INFINITY));
+ck_assert_double_nan(s21_tan(-INFINITY));

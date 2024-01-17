@@ -1,0 +1,13 @@
+#include <check.h>
+#include <math.h>
+
+#include "s21_math.h"
+
+#test s21_sin_test
+for (double i = -100; i <= 100; i += 0.1) {
+  ck_assert_double_eq_tol(sinl(i), s21_sin(i), s21_EPS);
+}
+
+ck_assert_ldouble_nan(s21_sin(NAN));
+ck_assert_double_nan(s21_sin(INFINITY));
+ck_assert_double_nan(s21_sin(-INFINITY));
